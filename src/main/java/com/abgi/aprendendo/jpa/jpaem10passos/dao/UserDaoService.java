@@ -1,4 +1,4 @@
-package com.abgi.aprendendo.jpa.jpaem10passos.entity.repository;
+package com.abgi.aprendendo.jpa.jpaem10passos.dao;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -10,7 +10,7 @@ import com.abgi.aprendendo.jpa.jpaem10passos.entity.User;
 
 @Repository
 @Transactional
-public class UserRepository {
+public class UserDaoService {
 
 	@PersistenceContext
 	private EntityManager entityManager;

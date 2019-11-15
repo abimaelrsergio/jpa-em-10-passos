@@ -6,21 +6,21 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
+import com.abgi.aprendendo.jpa.jpaem10passos.dao.UserDaoService;
 import com.abgi.aprendendo.jpa.jpaem10passos.entity.User;
-import com.abgi.aprendendo.jpa.jpaem10passos.entity.repository.UserRepository;
 
 @Component
-public class UserCommandLineRunner implements CommandLineRunner {
+public class UserDaoServiceCommandLineRunner implements CommandLineRunner {
 
-	private static final Logger log = LoggerFactory.getLogger(UserCommandLineRunner.class);
+	private static final Logger log = LoggerFactory.getLogger(UserDaoServiceCommandLineRunner.class);
 	
 	@Autowired 
-	private UserRepository userRepository;
+	private UserDaoService userDaoService;
 	
 	@Override
 	public void run(String... args) throws Exception {
 		User user = new User("Giselle", "Minha patroa");
-		long id = userRepository.insert(user);
+		long id = userDaoService.insert(user);
 		
 		log.info("Novo usuario criado: " + user );
 	}
